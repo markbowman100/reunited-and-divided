@@ -2,7 +2,7 @@
   <div class="home">
     <div class="logo-container">
       <img id="richard" alt="Richard" class="person-image md-elevation-3" src="../assets/logo.png">
-      <p>
+      <p class="md-body-2">
         Say hello to Richard.
       </p>
     </div>

@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <div class="logo-container">
-      <img id="mark" alt="Mark" class="person-image md-elevation-3" src="../assets/mark.png">
-      <p>
-        Say hello to Mark.
+      <img id="mark" alt="Mark" class="person-image md-elevation-3 md-primary" src="../assets/mark.png">
+      <p class="md-body-2">
+        Meet Mark Bowman, when asked if he's a Democrat he said 'Did you just assume my party line?' Political status: its complicated.
       </p>
     </div>
   </div>
