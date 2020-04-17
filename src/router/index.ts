@@ -4,6 +4,7 @@ import Richard from '../views/Richard.vue'
 import George from '../views/George.vue'
 import Mark from '../views/Mark.vue'
 import About from '../views/About.vue'
+import Episodes from '../views/Episodes.vue'
 
 Vue.use(VueRouter)
 
@@ -37,8 +38,7 @@ Vue.use(VueRouter)
   {
     path: '/episodes',
     name: 'All Episodes',
-    component: About
-    //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: Episodes
   }
 ]
 
