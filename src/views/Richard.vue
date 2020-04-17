@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
+  <div class="person">
     <div class="logo-container">
       <img id="richard" alt="Richard" class="person-image md-elevation-3" src="../assets/logo.png">
-      <p class="md-body-2">
+      <p class="md-subheading">
         Say hello to Richard.
       </p>
     </div>
@@ -23,5 +23,8 @@ export default {
   margin-left: auto;
   margin-right: auto;
   width:50%;
+}
+.md-subheading, .person {
+  margin-top: 5%;
 }
 </style>
