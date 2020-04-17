@@ -5,7 +5,8 @@
       <md-tab id="tab-richard" md-label="Richard" to="/richard"></md-tab>
       <md-tab id="tab-george" md-label="George" to="/george"></md-tab>
       <md-tab id="tab-mark" md-label="Mark" to="/mark"></md-tab>
-      <md-tab id="tab-contact-us" md-label="Links" to="/contact-us"></md-tab>
+      <md-tab id="tab-episodes" md-label="All Episodes" to="/episodes"></md-tab>
+      <md-tab id="tab-contact-us" md-label="Contact Us" to="/contact-us"></md-tab>
     </md-tabs>
     <div class="md-layout biography full-screen">
       <div class="md-layout-item md-small-size-5 md-xsmall-size-3 md-size-25"></div>

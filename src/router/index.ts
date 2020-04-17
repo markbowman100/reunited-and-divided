@@ -33,6 +33,12 @@ Vue.use(VueRouter)
     name: 'Contact Us',
     component: About
     //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/episodes',
+    name: 'All Episodes',
+    component: About
+    //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
 
