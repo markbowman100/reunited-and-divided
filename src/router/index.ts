@@ -29,12 +29,12 @@ Vue.use(VueRouter)
     name: 'Mark',
     component: Mark
   },
-  {
-    path: '/contact-us',
-    name: 'Contact Us',
-    component: About
+  //{
+  //  path: '/contact-us',
+  //  name: 'Contact Us',
+  //  component: About
     //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
+  //},
   {
     path: '/episodes',
     name: 'All Episodes',
