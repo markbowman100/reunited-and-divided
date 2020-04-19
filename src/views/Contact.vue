@@ -61,7 +61,6 @@
 </template>
 
 <script>
-  import Validation from '../model/validation';
 
   export default {
     name: 'Contact',
@@ -74,7 +73,6 @@
         message: null
       }
     },
-    validators: Validation.contact,
     methods: {
       checkForm: function (e) {
       if (this.name && this.email && this.subject && this.message) {
