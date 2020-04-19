@@ -1,12 +1,44 @@
 <template>
   <div id="app" class="full-screen">
-    <md-tabs id="toolbar" md-sync-route md-alignment="centered" class="md-transparent">
-      <md-tab id="tab-home" md-label="Home" to="/" exact></md-tab>
-      <md-tab id="tab-richard" md-label="Richard" to="/richard"></md-tab>
-      <md-tab id="tab-george" md-label="George" to="/george"></md-tab>
-      <md-tab id="tab-mark" md-label="Mark" to="/mark"></md-tab>
-      <md-tab id="tab-episodes" md-label="All Episodes" to="/episodes"></md-tab>
-    </md-tabs>
+    <div class="md-layout">
+      <div class="md-layout-item md-size-25" style="text-align:left;">
+        <md-button to="/">
+          <img id="george" alt="George" src="./assets/r_and_d.jpg" style="width:40px;">
+        </md-button>
+      </div>
+      <div class="md-layout-item md-size-50" style="text-align:center">
+        <md-button to="/" class="md-button">
+          Home
+        </md-button>
+        <md-button to="/richard" class="md-button">
+          Richard
+        </md-button>
+        <md-button to="/george" class="md-button">
+          George
+        </md-button>
+        <md-button to="/mark" class="md-button">
+          Mark
+        </md-button>
+        <md-button to="/episodes" class="md-button">
+          Episodes
+        </md-button>
+        <md-button to="/contact-us" class="md-button">
+          Contact
+        </md-button>
+      </div>
+      <div class="md-layout-item md-size-25" style="text-align:center;">
+        <span>
+          <a href="https://www.facebook.com/groups/235954670978104/" target="_blank">
+            <img alt="Facebook" src="./assets/facebook.png" style="margin-top:7px;width:30px;">
+          </a>
+        </span>
+        <span>
+          <a href="https://podcasts.apple.com/us/podcast/reunited-and-divided/id1508240158" target="_blank">
+            <img alt="Listen on Itunes" src="./assets/apple.png" style="margin-top:7px;margin-left:7px;width:30px;">
+          </a>
+        </span>
+      </div>
+    </div>
     <br>
     <br>
     <div class="md-layout">
@@ -30,5 +62,8 @@
   .content {
     font-family: Roboto,Noto Sans,-apple-system,BlinkMacSystemFont,sans-serif;
     padding-left: 1%;
+  }
+  .social-media-icons {
+    float:right;
   }
 </style>

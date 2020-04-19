@@ -17,7 +17,6 @@ export default {
 
 <style scoped>
 .person-image {
-  margin-top:2%;
   display: block;
   margin-left: auto;
   margin-right: auto;
