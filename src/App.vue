@@ -30,7 +30,7 @@
         <span>
           <a href="https://www.facebook.com/groups/235954670978104/" target="_blank">
             <img alt="Facebook" src="./assets/facebook.png" style="margin-top:7px;width:30px;">
-            <md-tooltip md-direction="Bottom">Facebook</md-tooltip>
+            <md-tooltip md-direction="bottom">Facebook</md-tooltip>
           </a>
         </span>
         <span>
@@ -58,7 +58,7 @@
         <span>
           <a href="https://www.facebook.com/groups/235954670978104/" target="_blank">
             <img alt="Facebook" src="./assets/facebook.png" style="margin-top:7px;width:30px;">
-            <md-tooltip md-direction="Bottom">Facebook</md-tooltip>
+            <md-tooltip md-direction="bottom">Facebook</md-tooltip>
           </a>
         </span>
         <span>

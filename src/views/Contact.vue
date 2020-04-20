@@ -1,67 +1,46 @@
 <template>
-<form id="app" @submit="checkForm" action="https://vuejs.org/" method="post">
-
-  <p v-if="errors.length">
-    <b>Please correct the following error(s):</b>
-    <ul>
-      <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-    </ul>
-  </p>
-
-  <div>
-    <div>Name</div>
-    <input
-      id="name"
-      v-model="name"
-      type="text"
-      name="name"
-    >
-  </div>
-
-  <div>
-    <div>Email Address</div>
-    <input
-      id="email"
-      v-model="email"
-      type="text"
-      name="email"
-    >
-  </div>
-
-  <div>
-    <div>Subject</div>
-    <input
-      id="subject"
-      v-model="subject"
-      type="subject"
-      name="subject"
-    >
-  </div>
-
-  <div>
+  <form id="app" @submit="checkForm" method="post" class="contact">
+    <p v-if="errors.length">
+      <b>Please correct the following error(s):</b>
+      <ul>
+        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+      </ul>
+    </p>
+    <p v-if="success === true">
+      <b>Message sent. Thank you.</b>
+    </p>
     <div>
-      Message
+      <md-field>
+        <label>Name</label>
+        <md-input v-model="name"></md-input>
+      </md-field>
     </div>
-    <input
-      id="message"
-      v-model="message"
-      type="message"
-      name="message"
-    >
-  </div>
-
-  <p>
-    <input
-      type="submit"
-      value="Submit"
-    >
-  </p>
-
-</form>
+    <div>
+      <md-field>
+        <label>Email Address</label>
+        <md-input v-model="email"></md-input>
+      </md-field>
+    </div>
+    <div>
+      <md-field>
+        <label>Subject</label>
+        <md-input v-model="subject"></md-input>
+      </md-field>
+    </div>
+    <div>
+      <md-field>
+        <label>Message</label>
+        <md-textarea v-model="message" md-autogrow></md-textarea>
+      </md-field>
+    </div>
+    <p>
+      <input type="submit" value="Submit">
+    </p>
+    <input type="hidden" id="botbuster" name="botbuster" v-model="botbuster">
+  </form>
 </template>
 
 <script>
-
   export default {
     name: 'Contact',
     data: function() {
@@ -70,33 +49,72 @@
         name: null,
         email: null,
         subject: null,
-        message: null
+        message: null,
+        botbuster: null,
+        success: null
       }
     },
     methods: {
       checkForm: function (e) {
-      if (this.name && this.email && this.subject && this.message) {
-        return true;
-      }
+        if(this.botbuster !== null) {
+          this.success = false;
+          return this.success;
+        }
 
-      this.errors = [];
+        this.errors = [];
 
-      if (!this.name) {
-        this.errors.push('Name required.');
-      }
-      if (!this.email) {
-        this.errors.push('Email Address required.');
-      }
-      if (!this.subject) {
-        this.errors.push('Subject required.');
-      }
-      if (!this.message) {
-        this.errors.push('Message required.');
-      }
+        if (!this.name) {
+          this.errors.push('Name required.');
+        }
+        if (!this.email) {
+          this.errors.push('Email Address required.');
+        }
+        if (!this.subject) {
+          this.errors.push('Subject required.');
+        }
+        if (!this.message) {
+          this.errors.push('Message required.');
+        }
 
-      e.preventDefault();
+        //Call function to send email
+        if(this.errors.length === 0) {
+          e.preventDefault();
+          
+          //TODO: call email function
+          this.$axios
+          .post('https://api.reunitedanddivided.com/send-email', {
+            name: this.name, 
+            email: this.email, 
+            subject: this.subject, 
+            message: this.message
+          })
+          .then(function(response) {
+            alert(JSON.stringify(response))
+            if(response === true) {
+              this.name = null;
+              this.email = null;
+              this.subject = null;
+              this.message = null;
+
+              this.success = true;
+              return this.success;
+            }
+            else {
+              this.errors.push('Could not send message.')
+              this.success = false;
+              return this.success;
+            }
+          })
+          .catch(function(e) {
+            console.log(e)
+          });
+        }
+        else {
+          this.success = false;
+          return this.success;
+        }
+      }
     }
-  }
   }
 </script>
 
@@ -115,5 +133,14 @@
   padding-top: 3%;
   padding-bottom: 3%;
   text-align:center;
+}
+.contact {
+  border-style: solid;
+  border-color: orange;
+  border-radius: 16px;
+  border-width: .5px;
+  padding: 1%;
+  margin-top: 6%;
+  margin-bottom: 12%;
 }
 </style>
