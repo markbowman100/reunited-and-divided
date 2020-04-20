@@ -1,5 +1,5 @@
 <template>
-  <form id="app" @submit="checkForm" method="post" class="contact">
+  <form id="app" @submit="checkForm" method="post" class="contact md-elevation-3">
     <p v-if="errors.length">
       <b>Please correct the following error(s):</b>
       <ul>
@@ -33,9 +33,9 @@
         <md-textarea v-model="message" md-autogrow></md-textarea>
       </md-field>
     </div>
-    <p>
-      <input type="submit" value="Submit">
-    </p>
+    <div>
+      <md-button type="submit" value="Submit" class="md-raised">Submit</md-button>
+    </div>
     <input type="hidden" id="botbuster" name="botbuster" v-model="botbuster">
   </form>
 </template>
@@ -80,7 +80,6 @@
         if(this.errors.length === 0) {
           e.preventDefault();
           
-          //TODO: call email function
           this.$axios
           .post('https://api.reunitedanddivided.com/send-email', {
             name: this.name, 
@@ -139,7 +138,7 @@
   border-color: orange;
   border-radius: 16px;
   border-width: .5px;
-  padding: 1%;
+  padding: 3%;
   margin-top: 6%;
   margin-bottom: 12%;
 }

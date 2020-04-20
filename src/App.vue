@@ -1,29 +1,29 @@
 <template>
   <div id="app" class="full-screen">
-    <div class="md-layout" style="background-color:orange;">
+    <div class="md-layout">
       <div class="md-layout-item md-size-25" style="text-align:left;">
         <md-button to="/">
-          <img id="george" alt="George" src="./assets/r_and_d.jpg" style="width:40px;">
+          <img id="george" alt="George" src="./assets/r_and_d.jpg" style="width:50px;">
         </md-button>
       </div>
       <div class="md-layout-item md-size-50" style="text-align:center">
         <md-button to="/" class="md-button">
-          <b>Home</b>
+          <span>Home</span>
         </md-button>
         <md-button to="/richard" class="md-button">
-          <b>Richard</b>
+          <span>Richard</span>
         </md-button>
         <md-button to="/george" class="md-button">
-          <b>George</b>
+          <span>George</span>
         </md-button>
         <md-button to="/mark" class="md-button">
-          <b>Mark</b>
+          <span>Mark</span>
         </md-button>
         <md-button to="/episodes" class="md-button">
-          <b>Episodes</b>
+          <span>Episodes</span>
         </md-button>
         <md-button to="/contact-us" class="md-button">
-          <b>Contact</b>
+          <span>Contact</span>
         </md-button>
       </div>
       <div class="md-layout-item md-size-25" style="text-align:center;">
@@ -50,7 +50,8 @@
       </div>
       <div class="md-layout-item md-small-size-5 md-xsmall-size-3 md-size-25"></div>
     </div>
-    <div class="md-layout footer" style="background-color:orange;">
+    <br>
+    <div class="md-layout footer">
       <div class="md-layout-item md-size-100 social-media-icons" style="text-align:center;">
         <div class="find-us">
           Where to Find Us
@@ -78,6 +79,8 @@
   }
 </script>
 
+<link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+
 <style scoped>
   .content {
     font-family: Roboto,Noto Sans,-apple-system,BlinkMacSystemFont,sans-serif;
@@ -88,10 +91,10 @@
     margin-bottom:.5%;
   }
   .find-us {
-    margin-top:.5%;
     font-size: large;
   }
   .footer {
+    color: white;
     left: 0;
     bottom: 0;
     width:100%;
