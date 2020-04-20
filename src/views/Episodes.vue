@@ -16,6 +16,14 @@
       Episode 4: UBI
     </p>
     <iframe width="100%" src="https://w.soundcloud.com/player/?url=https%3A//api-v2.soundcloud.com/tracks/798419041&amp;"></iframe>
+    <p class="md-subheading">
+      Episode 5: Healthcare and the Democratic Party
+    </p>
+    <iframe width="100%" src="https://w.soundcloud.com/player/?url=https%3A//api-v2.soundcloud.com/tracks/801756307&amp;"></iframe>
+    <p class="md-subheading">
+      Episode 6: Guns
+    </p>
+    <iframe width="100%" src="https://w.soundcloud.com/player/?url=https%3A//api-v2.soundcloud.com/tracks/801944686&amp;"></iframe>
   </div>
 </template>
 
@@ -26,9 +34,6 @@
   margin-left: auto;
   margin-right: auto;
   width:50%;
-}
-.about {
-  padding: 5%;
 }
 </style>
 

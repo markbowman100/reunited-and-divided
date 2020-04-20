@@ -22,9 +22,11 @@
         <md-button to="/episodes" class="md-button">
           <span>Episodes</span>
         </md-button>
+        <!--
         <md-button to="/contact-us" class="md-button">
           <span>Contact</span>
         </md-button>
+        -->
       </div>
       <div class="md-layout-item md-size-25" style="text-align:center;">
         <span>

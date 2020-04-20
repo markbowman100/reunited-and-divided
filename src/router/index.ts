@@ -5,7 +5,7 @@ import George from '../views/George.vue'
 import Mark from '../views/Mark.vue'
 import About from '../views/About.vue'
 import Episodes from '../views/Episodes.vue'
-import Contact from '../views/Contact.vue'
+//import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter)
 
@@ -34,12 +34,14 @@ Vue.use(VueRouter)
     path: '/episodes',
     name: 'All Episodes',
     component: Episodes
-  },
+  }
+  /*
   {
     path: '/contact-us',
     name: 'Contact Us',
     component: Contact
    }
+   */
 ]
 
 const router = new VueRouter({
