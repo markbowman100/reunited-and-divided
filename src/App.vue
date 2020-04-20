@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="full-screen">
-    <div class="md-layout">
+    <div class="md-layout" style="background-color:orange;">
       <div class="md-layout-item md-size-25" style="text-align:left;">
         <md-button to="/">
           <img id="george" alt="George" src="./assets/r_and_d.jpg" style="width:40px;">
@@ -8,33 +8,35 @@
       </div>
       <div class="md-layout-item md-size-50" style="text-align:center">
         <md-button to="/" class="md-button">
-          Home
+          <b>Home</b>
         </md-button>
         <md-button to="/richard" class="md-button">
-          Richard
+          <b>Richard</b>
         </md-button>
         <md-button to="/george" class="md-button">
-          George
+          <b>George</b>
         </md-button>
         <md-button to="/mark" class="md-button">
-          Mark
+          <b>Mark</b>
         </md-button>
         <md-button to="/episodes" class="md-button">
-          Episodes
+          <b>Episodes</b>
         </md-button>
         <md-button to="/contact-us" class="md-button">
-          Contact
+          <b>Contact</b>
         </md-button>
       </div>
       <div class="md-layout-item md-size-25" style="text-align:center;">
         <span>
           <a href="https://www.facebook.com/groups/235954670978104/" target="_blank">
             <img alt="Facebook" src="./assets/facebook.png" style="margin-top:7px;width:30px;">
+            <md-tooltip md-direction="Bottom">Facebook</md-tooltip>
           </a>
         </span>
         <span>
           <a href="https://podcasts.apple.com/us/podcast/reunited-and-divided/id1508240158" target="_blank">
             <img alt="Listen on Itunes" src="./assets/apple.png" style="margin-top:7px;margin-left:7px;width:30px;">
+            <md-tooltip md-direction="bottom">Apple Podcasts</md-tooltip>
           </a>
         </span>
       </div>
@@ -48,9 +50,27 @@
       </div>
       <div class="md-layout-item md-small-size-5 md-xsmall-size-3 md-size-25"></div>
     </div>
+    <div class="md-layout footer" style="background-color:orange;">
+      <div class="md-layout-item md-size-100 social-media-icons" style="text-align:center;">
+        <div class="find-us">
+          Where to Find Us
+        </div>
+        <span>
+          <a href="https://www.facebook.com/groups/235954670978104/" target="_blank">
+            <img alt="Facebook" src="./assets/facebook.png" style="margin-top:7px;width:30px;">
+            <md-tooltip md-direction="Bottom">Facebook</md-tooltip>
+          </a>
+        </span>
+        <span>
+          <a href="https://podcasts.apple.com/us/podcast/reunited-and-divided/id1508240158" target="_blank">
+            <img alt="Listen on Itunes" src="./assets/apple.png" style="margin-top:7px;margin-left:7px;width:30px;">
+            <md-tooltip md-direction="bottom">Apple Podcasts</md-tooltip>
+          </a>
+        </span>
+      </div>
+    </div>
   </div>
 </template>
-<link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
 
 <script>
   export default {
@@ -64,6 +84,16 @@
     padding-left: 1%;
   }
   .social-media-icons {
-    float:right;
+    font-family: Roboto,Noto Sans,-apple-system,BlinkMacSystemFont,sans-serif;
+    margin-bottom:.5%;
+  }
+  .find-us {
+    margin-top:.5%;
+    font-size: large;
+  }
+  .footer {
+    left: 0;
+    bottom: 0;
+    width:100%;
   }
 </style>
