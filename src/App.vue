@@ -1,47 +1,80 @@
 <template>
   <div id="app" class="full-screen">
-    <div class="md-layout">
-      <div class="md-layout-item md-size-25" style="text-align:left;">
-        <md-button to="/">
-          <img id="george" alt="George" src="./assets/r_and_d.jpg" style="width:50px;">
-        </md-button>
-      </div>
-      <div class="md-layout-item md-size-50" style="text-align:center">
-        <md-button to="/" class="md-button">
-          <span>Home</span>
-        </md-button>
-        <md-button to="/richard" class="md-button">
-          <span>Richard</span>
-        </md-button>
-        <md-button to="/george" class="md-button">
-          <span>George</span>
-        </md-button>
-        <md-button to="/mark" class="md-button">
-          <span>Mark</span>
-        </md-button>
-        <md-button to="/episodes" class="md-button">
-          <span>Episodes</span>
-        </md-button>
-        <!--
-        <md-button to="/contact-us" class="md-button">
-          <span>Contact</span>
-        </md-button>
-        -->
-      </div>
-      <div class="md-layout-item md-size-25" style="text-align:center;">
-        <span>
-          <a href="https://www.facebook.com/groups/235954670978104/" target="_blank">
-            <img alt="Facebook" src="./assets/facebook.png" style="margin-top:7px;width:30px;">
-            <md-tooltip md-direction="bottom">Facebook</md-tooltip>
-          </a>
+    <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+    <div class="page-container md-layout-column">
+      <md-toolbar class="md-transparent" md-elevation="0">
+        <span class="md-toolbar-section-start">
+          <md-button class="md-icon-button show-small" @click="showNavigation = true">
+            <img alt="Menu" src="./assets/menu.png">
+          </md-button>
+          <router-link to="/" style="width:10%;" class="hide-small"><img alt="Reunited and Divided" src="./assets/r_and_d.jpg"></router-link>
         </span>
-        <span>
-          <a href="https://podcasts.apple.com/us/podcast/reunited-and-divided/id1508240158" target="_blank">
-            <img alt="Listen on Itunes" src="./assets/apple.png" style="margin-top:7px;margin-left:7px;width:30px;">
-            <md-tooltip md-direction="bottom">Apple Podcasts</md-tooltip>
-          </a>
+
+        <span class="hide-small md-toolbar-section-middle">
+          <md-button to="/">
+            <span>Home</span>
+          </md-button>
+
+          <md-button to="/richard">
+            <span>Richard</span>
+          </md-button>
+
+          <md-button to="/george">
+            <span>George</span>
+          </md-button>
+
+          <md-button to="/mark">
+            <span>Mark</span>
+          </md-button>
+
+          <md-button to="/episodes">
+            <span>Episodes</span>
+          </md-button>
         </span>
-      </div>
+
+        <div class="md-toolbar-section-end">
+          <span>
+            <a href="https://www.facebook.com/groups/235954670978104/" target="_blank">
+              <img alt="Facebook" src="./assets/facebook.png" style="margin-top:7px;width:30px;">
+              <md-tooltip md-direction="bottom">Facebook</md-tooltip>
+            </a>
+          </span>
+          <span>
+            <a href="https://podcasts.apple.com/us/podcast/reunited-and-divided/id1508240158" target="_blank">
+              <img alt="Listen on Itunes" src="./assets/apple.png" style="margin-top:7px;margin-left:7px;width:30px;">
+              <md-tooltip md-direction="bottom">Apple Podcasts</md-tooltip>
+            </a>
+          </span>
+        </div>
+      </md-toolbar>
+
+      <md-drawer :md-active.sync="showNavigation" md-swipeable>
+        <md-toolbar class="md-transparent" md-elevation="0">
+          <img alt="Reunited and Divided" src="./assets/r_and_d.jpg">
+        </md-toolbar>
+
+        <md-list>
+          <md-list-item to="/">
+            <span class="md-list-item-text">Home</span>
+          </md-list-item>
+
+          <md-list-item to="/richard">
+            <span class="md-list-item-text">Richard</span>
+          </md-list-item>
+
+          <md-list-item to="/george">
+            <span class="md-list-item-text">George</span>
+          </md-list-item>
+
+          <md-list-item to="/mark">
+            <span class="md-list-item-text">Mark</span>
+          </md-list-item>
+
+          <md-list-item to="/episodes">
+            <span class="md-list-item-text">Episodes</span>
+          </md-list-item>
+        </md-list>
+      </md-drawer>
     </div>
     <br>
     <br>
@@ -77,13 +110,25 @@
 
 <script>
   export default {
-    name: 'TabRouter'
+    name: 'TabRouter',
+    data: () => ({
+      showNavigation: false,
+      showSidepanel: false
+    })
   }
 </script>
 
-<link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
-
 <style scoped>
+  @media (max-width: 1026px) {
+    .hide-small {
+      display: none;
+    }
+  }
+  @media (min-width: 1026px) {
+    .show-small {
+      display: none;
+    }
+  }
   .content {
     font-family: Roboto,Noto Sans,-apple-system,BlinkMacSystemFont,sans-serif;
     padding-left: 1%;
