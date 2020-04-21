@@ -141,7 +141,6 @@
     font-size: large;
   }
   .footer {
-    color: white;
     left: 0;
     bottom: 0;
     width:100%;
