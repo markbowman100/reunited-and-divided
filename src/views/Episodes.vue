@@ -27,13 +27,3 @@
   </div>
 </template>
 
-<style scoped>
-.person-image {
-  margin-top:2%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width:50%;
-}
-</style>
-

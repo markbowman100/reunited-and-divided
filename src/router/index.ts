@@ -16,21 +16,6 @@ Vue.use(VueRouter)
     component: About
   },
   {
-    path: '/richard',
-    name: 'Richard',
-    component: Richard
-  },
-  {
-    path: '/george',
-    name: 'George',
-    component: George
-  },
-  {
-    path: '/mark',
-    name: 'Mark',
-    component: Mark
-  },
-  {
     path: '/episodes',
     name: 'All Episodes',
     component: Episodes
