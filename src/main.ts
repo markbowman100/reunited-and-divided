@@ -6,10 +6,8 @@ import { MdButton, MdContent, MdTabs, MdTooltip, MdField, MdDrawer, MdList, MdTo
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/black-green-light.css'
 import axios from 'axios'
-import VueScrollTo from 'vue-scrollto'
 
 Vue.prototype.$axios = axios;
-Vue.use(VueScrollTo)
 Vue.use(MdIcon)
 Vue.use(MdList)
 Vue.use(MdToolbar)
