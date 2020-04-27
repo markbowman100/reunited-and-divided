@@ -16,17 +16,19 @@
             <span>Home</span>
           </md-button>
 
-          <md-button href="#richard" @click="showNavigation = false">
-            <span>Richard</span>
-          </md-button>
+          <span v-if="$route.path === '/'">
+            <md-button href="#richard" @click="showNavigation = false">
+              <span>Richard</span>
+            </md-button>
 
-          <md-button href="#george" @click="showNavigation = false">
-            <span>George</span>
-          </md-button>
+            <md-button href="#george" @click="showNavigation = false">
+              <span>George</span>
+            </md-button>
 
-          <md-button href="#mark" @click="showNavigation = false">
-            <span>Mark</span>
-          </md-button>
+            <md-button href="#mark" @click="showNavigation = false">
+              <span>Mark</span>
+            </md-button>
+          </span>
 
           <md-button to="/episodes">
             <span>Episodes</span>
@@ -68,20 +70,22 @@
               <span class="md-list-item-text">Home</span>
             </md-list-item>
 
-            <md-list-item href="#richard" @click="showNavigation = false">
-              <md-icon class="fa fa-face"></md-icon>
-              <span class="md-list-item-text">Richard</span>
-            </md-list-item>
+            <span v-if="$route.path === '/'">
+              <md-list-item href="#richard" @click="showNavigation = false">
+                <md-icon class="fa fa-face"></md-icon>
+                <span class="md-list-item-text">Richard</span>
+              </md-list-item>
 
-            <md-list-item href="#george" @click="showNavigation = false">
-              <md-icon class="fa fa-face"></md-icon>
-              <span class="md-list-item-text">George</span>
-            </md-list-item>
+              <md-list-item href="#george" @click="showNavigation = false">
+                <md-icon class="fa fa-face"></md-icon>
+                <span class="md-list-item-text">George</span>
+              </md-list-item>
 
-            <md-list-item href="#mark" @click="showNavigation = false">
-              <md-icon class="fa fa-face"></md-icon>
-              <span class="md-list-item-text">Mark</span>
-            </md-list-item>
+              <md-list-item href="#mark" @click="showNavigation = false">
+                <md-icon class="fa fa-face"></md-icon>
+                <span class="md-list-item-text">Mark</span>
+              </md-list-item>
+            </span>
 
             <md-list-item to="/episodes" @click="showNavigation = false">
               <md-icon class="fa fa-play"></md-icon>

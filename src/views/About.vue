@@ -15,8 +15,8 @@
     <div class="spacing-bottom border-bottom">
       <iframe width="100%" src="https://w.soundcloud.com/player/?url=https%3A//api-v2.soundcloud.com/tracks/797753905&amp;"></iframe>
     </div>
-    <div v-for="person in personInfo" :key="person.name">
-      <Person :description="person.description" :name="person.name" :imagePath="person.imagePath"></Person>
+    <div v-for="person in personInfo" :key="person.id">
+      <Person :id="person.id" :description="person.description" :name="person.name" :imagePath="person.imagePath"></Person>
     </div>
   </div>
 </template>
@@ -29,11 +29,13 @@
     data: function() {
       const personData = [
         {
+          id: "richard",
           description:"Classified",
           name:"Richard Devoe",
           imagePath:"img/richard.jpg"
         },
         {
+          id: "george",
           description:`George Quick: I met Mark and Rich in the 8th grade, we made our own versions of RPGs and strategy games to play at lunch. 
             In high school, we played Magic the Gathering, poker and Dungeons and Dragons. 
             We were in choir and drama together, we hung out on weekends at my Dad's on the farm or at Rich's house. 
@@ -45,6 +47,7 @@
           imagePath:"img/george.jpg"
         },
         {
+          id: "mark",
           description:`Mark Bowman: I don't remember exactly when I met Richard, but I didn't like him. 
             I met George in 8th grade, and he invited me to play games. I found out later that Richard was invited too.  
             I was immediately skeptical of George at that point, but I gave it a shot anyway. It was a good thing.  

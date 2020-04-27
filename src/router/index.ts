@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Richard from '../views/Richard.vue'
-import George from '../views/George.vue'
-import Mark from '../views/Mark.vue'
 import About from '../views/About.vue'
 import Episodes from '../views/Episodes.vue'
 //import Contact from '../views/Contact.vue'
@@ -30,6 +27,7 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

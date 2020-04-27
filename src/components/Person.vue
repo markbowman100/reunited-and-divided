@@ -1,10 +1,10 @@
 <template>
-  <div class="person" ref="richard">
+  <div class="person" :ref="id">
     <div class="logo-container">
       <p class="md-display-1">
         {{name}}
       </p>
-      <img id="richard" alt="Richard" class="person-image" :src="imagePath">
+      <img :id="id" alt="Richard" class="person-image" :src="imagePath">
       <p class="md-subheading description" style="text-align:center;">
         {{description}}
       </p>
@@ -17,6 +17,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Person extends Vue {
+  @Prop() private id!: string;
   @Prop() private name!: string;
   @Prop() private description!: string;
   @Prop() private imagePath!: string;
