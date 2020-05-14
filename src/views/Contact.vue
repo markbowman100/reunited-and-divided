@@ -1,14 +1,19 @@
 <template>
   <form id="app" @submit="checkForm" method="post" class="contact md-elevation-3">
-    <p v-if="errors.length">
-      <b>Please correct the following error(s):</b>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-    </p>
-    <p v-if="success === true">
-      <b>Message sent. Thank you.</b>
-    </p>
+    <div class="md-layout">
+      <div class="md-layout-item md-size-40"></div>
+      <div class="md-layout-item md-size-30">
+        <p v-if="errors.length">
+          <ul>
+            <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+          </ul>
+        </p>
+        <p v-if="success === true">
+          <b>Message sent. Thank you.</b>
+        </p>
+      </div>
+      <div class="md-layout-item md-size-30"></div>
+    </div>
     <div>
       <md-field>
         <label>Name</label>
@@ -33,10 +38,15 @@
         <md-textarea v-model="message" md-autogrow></md-textarea>
       </md-field>
     </div>
-    <div>
-      <md-button type="submit" value="Submit" class="md-raised">Submit</md-button>
-    </div>
     <input type="hidden" id="botbuster" name="botbuster" v-model="botbuster">
+    <div class="md-layout">
+      <div class="md-layout-item md-size-90"></div>
+      <div class="md-layout-item md-size-10">
+        <div>
+          <md-button type="submit" value="Submit" class="md-raised">Submit</md-button>
+        </div>
+      </div>
+    </div>
   </form>
 </template>
 
@@ -56,6 +66,7 @@
     },
     methods: {
       checkForm: function (e) {
+        e.preventDefault();
         if(this.botbuster !== null) {
           this.success = false;
           return this.success;
@@ -78,17 +89,15 @@
 
         //Call function to send email
         if(this.errors.length === 0) {
-          e.preventDefault();
           
           this.$axios
-          .post('https://api.reunitedanddivided.com/send-email', {
+          .post('https://us-central1-randdwebsite.cloudfunctions.net/send-email', {
             name: this.name, 
             email: this.email, 
             subject: this.subject, 
             message: this.message
           })
           .then(function(response) {
-            alert(JSON.stringify(response))
             if(response === true) {
               this.name = null;
               this.email = null;

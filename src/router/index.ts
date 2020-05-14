@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import About from '../views/About.vue'
 import Episodes from '../views/Episodes.vue'
-//import Contact from '../views/Contact.vue'
+import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter)
 
@@ -16,14 +16,12 @@ Vue.use(VueRouter)
     path: '/episodes',
     name: 'All Episodes',
     component: Episodes
-  }
-  /*
+  },
   {
-    path: '/contact-us',
+    path: '/contact',
     name: 'Contact Us',
     component: Contact
    }
-   */
 ]
 
 const router = new VueRouter({
