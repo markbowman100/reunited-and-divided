@@ -33,11 +33,10 @@
           <md-button to="/episodes">
             <span>Episodes</span>
           </md-button>
-          <!--
+          
           <md-button to="/contact">
             <span>Contact</span>
           </md-button>
-          -->
         </span>
 
         <div class="md-toolbar-section-end">
@@ -96,12 +95,11 @@
               <md-icon class="fa fa-play"></md-icon>
               <span class="md-list-item-text">Episodes</span>
             </md-list-item>
-            <!--
+            
             <md-list-item to="/contact" @click="showNavigation = false">
-              <md-icon class="fa fa-play"></md-icon>
+              <md-icon class="fa fa-envelope"></md-icon>
               <span class="md-list-item-text">Contact</span>
             </md-list-item>
-            -->
           </md-list>
         </div>
         <div class="md-layout menu-icons border-top">
