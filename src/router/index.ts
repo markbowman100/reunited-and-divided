@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import About from '../views/About.vue'
-import Episodes from '../views/Episodes.vue'
 import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter)
@@ -11,11 +10,6 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: About
-  },
-  {
-    path: '/episodes',
-    name: 'All Episodes',
-    component: Episodes
   },
   {
     path: '/contact',

@@ -29,10 +29,6 @@
               <span>Mark</span>
             </md-button>
           </span>
-
-          <md-button to="/episodes">
-            <span>Episodes</span>
-          </md-button>
           
           <md-button to="/contact">
             <span>Contact</span>
@@ -90,11 +86,6 @@
                 <span class="md-list-item-text">Mark</span>
               </md-list-item>
             </span>
-
-            <md-list-item to="/episodes" @click="showNavigation = false">
-              <md-icon class="fa fa-play"></md-icon>
-              <span class="md-list-item-text">Episodes</span>
-            </md-list-item>
             
             <md-list-item to="/contact" @click="showNavigation = false">
               <md-icon class="fa fa-envelope"></md-icon>
