@@ -96,8 +96,7 @@
         if(this.errors.length === 0) {
           const config = {
             headers: {
-              'Content-Type': "application/json",
-              'x-api-key': "9eeb8511-fbf8-465f-b4a3-c485029f7bff";
+              'Content-Type': "application/json"
             }
           };
 
@@ -129,8 +128,7 @@
       sendEmail: async function(data, config) {
         let success = false;
         await this.$axios
-          .post('https://us-central1-randdwebsite.cloudfunctions.net/send-emails', 
-          data, config)
+          .post('https://us-central1-randdwebsite.cloudfunctions.net/send-emails', data, config)
           .then(function(response) {
             if(response.status === 200) {
               success = true;
